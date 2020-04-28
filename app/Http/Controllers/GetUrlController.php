@@ -10,7 +10,11 @@ class GetUrlController extends Controller
     public function url($id){
         $youtube=DB::table('youtube')->find($id);
         DB::table('youtube')->where('id',$id)->update(["view"=>$youtube->view+1]);
-        return $youtube->url;
+        return "
+        if('$youtube->url' != document.URL){
+            window.location.href = '$youtube->url';
+        }
+        ";
     }
     public function referer($id){
         $youtube=DB::table('youtube')->find($id);
