@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return redirect("/admin");
 });
-Route::get('/url/{id}', 'GetUrlController@url');
+Route::get('/url/{id}.js', 'GetUrlController@url');
 Route::get('/ref/{id}', 'GetUrlController@referer');
