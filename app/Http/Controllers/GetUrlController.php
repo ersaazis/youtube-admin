@@ -17,6 +17,6 @@ class GetUrlController extends Controller
         $referer=$youtube->referer;
         $referer=explode("\n",$referer);
         $ref=$referer[rand(0,count($referer)-1)];
-        return $ref;
+        return redirect($ref);
     }
 }
